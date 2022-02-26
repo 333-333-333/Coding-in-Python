@@ -1,0 +1,6 @@
+height = [1.33 , 1.83, 1.77 ] #Storing heights of persons in Height
+#you want to store height and name both then
+height = ["person1", 1.33, "person2", 1.83, "person3", 1.77]
+Person_heights = [["person1", 1.33] , ["person2", 1.83]] #nested list 
+print(height)
+print(Person_heights)
