@@ -1,0 +1,6 @@
+set = {"mahak", "manas", "ritik"}
+set.add("deepika")
+print(set)
+set1 = {"priyanshu", "divyansh"}
+set.update(set1)
+print(set)
