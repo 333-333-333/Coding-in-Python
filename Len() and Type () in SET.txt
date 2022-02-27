@@ -1,0 +1,4 @@
+thisset = {"rose", "tulip", "orchid"}
+print(len(thisset))
+myset = {"lotus", "daisy", "sunflower"}
+print(type(myset))
