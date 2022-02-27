@@ -1,0 +1,9 @@
+thisdict = {
+"brand": "Tata",
+"model": "Altroz",
+"year": 2020
+}
+for x in thisdict:
+ print(x)
+for x in thisdict:
+ print(thisdict[x])
