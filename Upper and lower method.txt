@@ -1,0 +1,4 @@
+a = "My name is Mahak."
+print(a.upper())
+a = "Mahak is a good girl."
+print(a.lower())
