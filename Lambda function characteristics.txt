@@ -1,0 +1,5 @@
+add = lambda x,y,z:x+y+z
+print(add(4,5,6))
+
+add= lambda x,y,z:x+y+z
+print(add(2,y=3,z=6))
