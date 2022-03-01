@@ -1,0 +1,2 @@
+doubler = lambda x:x*2
+print(doubler(2))
