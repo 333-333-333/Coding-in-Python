@@ -1,0 +1,9 @@
+queue=[]
+queue.append('3')
+queue.append('6')
+queue.append('9')
+print(queue)
+print(queue.pop(0))
+print(queue.pop(0))
+print(queue.pop(0))
+print(queue)
