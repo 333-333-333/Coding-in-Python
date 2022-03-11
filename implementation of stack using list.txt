@@ -1,0 +1,7 @@
+x = ["Python", "C", "Android"]
+x.append("Java")
+print(x)
+x.append("C++")
+print(x)
+x.pop()
+print(x)
