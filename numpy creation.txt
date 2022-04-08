@@ -1,0 +1,8 @@
+import numpy as np
+myarr = np.array([[3,6,9,12,15]], np.int64)
+print(myarr)
+print(myarr[0,1])
+print(myarr.shape)
+print(myarr.dtype)
+myarr[0,1] = 45
+print(myarr)
