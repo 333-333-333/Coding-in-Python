@@ -1,0 +1,5 @@
+import numpy as np 
+emp = np.empty((4,6))
+print(emp)
+emp_like = np.empty_like(emp)
+print(emp_like)
