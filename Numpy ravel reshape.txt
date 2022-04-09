@@ -1,0 +1,11 @@
+import numpy as np 
+ide = np.identity(45)
+print(ide)
+print(ide.shape)
+arr = np.arange(99)
+print(arr)
+arr = arr.reshape(3, 33)
+print(arr)
+arr = arr.ravel()
+print(arr)
+print(arr.shape)
