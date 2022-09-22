@@ -1,0 +1,34 @@
+import pgmpy.models
+import pgmpy.inference
+import pgmpy.factors.discrete as dis
+
+#B is burlgary,E is earthquake
+#A is alarm
+#J is john calls, M is mary calls
+
+#defines the relation b/w various nodes
+alarm_model=pgmpy.models.BayesianNetwork(
+    [("B","A"),("E","A"),("A","J"),("A","M")]
+)
+
+#entering the probabilities of all the relation and defining their direct relation
+cpd_b=dis.TabularCPD("B",2,[[0.001],[0.999]])
+cpd_e=dis.TabularCPD("E",2,[[0.002],[0.998]])
+cpd_a=dis.TabularCPD("A",2,[[0.001,0.29,0.94,0.95],[0.999,0.71,0.06,0.05]],evidence=["B","E"],evidence_card=[2,2])
+cpd_j=dis.TabularCPD("J",2,[[0.05,0.9],[0.95,0.1]],evidence=["A"],evidence_card=[2])
+cpd_m=dis.TabularCPD("M",2,[[0.9,0.3],[0.1,0.7]],evidence=["A"],evidence_card=[2])
+
+#adding conditional probability distribution to the network structure and checks whether model works
+alarm_model.add_cpds(cpd_b,cpd_e,cpd_a,cpd_m,cpd_j)
+print(alarm_model.check_model())
+
+print("P(B)\n",cpd_b,end="\n")
+print("P(E)\n",cpd_e,end="\n")
+print("P(A)\n",cpd_a,end="\n")
+print("P(J)\n",cpd_j,end="\n")
+print("P(M)\n",cpd_m,end="\n")
+
+infer=pgmpy.inference.VariableElimination(alarm_model)
+posterior_probability=infer.query(["B"],evidence={"J":0,"M":0})
+print("posterior probability is:")
+print(posterior_probability)
