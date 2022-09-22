@@ -1,0 +1,52 @@
+def Not(x): #converts list into its not form
+    L1=[]
+    for i in x:
+        if i==True:
+            L1.append(False)
+        else:
+            L1.append(True)
+    return L1
+def Or(x,y):
+    L1=[]
+    for i in range(0, len(x)):
+        if (x[i] or y[i] == True):
+            L1.append(True)
+        else:
+            L1.append(False)
+    return L1
+def And(x,y):
+    L1 = []
+    for i in range(0, len(x)):
+        if (x[i] and y[i] == True):
+            L1.append(True)
+        else:
+            L1.append(False)
+    return L1
+
+def check(x):
+    s1=set(x)
+    if s1=={True,False}:
+        print(f"{x} is contingency, not contradiction, not tautology\n")
+    elif s1=={True}:
+        print(f"{x} is tautology, not contradiction, not contingency\n")
+    elif s1=={False}:
+        print(f"{x} is contradiction, not tautology, not contingency\n")
+
+p = [True,True,False,False]
+q = [True,False,True,False]
+np = Not(p)
+nq = Not(q)
+
+P1 = Or(np,q)   #p->q == Not p Or q
+P2 = Or(nq,p)   #q->p == Not q Or p
+P3 = Not(P1)            #q And Not p
+P4 = Not(P2)            #p And Not q
+
+exp1=Or(P1,P2) #expression 1 (p->q) OR (q->p)
+check(exp1)
+
+exp2=And(P3,P4) #expression 2 NOT(p->q) AND NOT(q->p)
+check(exp2)
+
+exp3=And(P3,P2) #expression 3 NOT(p->q) AND (q->p)
+check(exp3)
