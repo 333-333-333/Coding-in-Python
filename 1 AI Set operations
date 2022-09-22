@@ -1,0 +1,18 @@
+A=eval(input("enter a set"))
+B=eval(input("enter a set"))
+A=set(A)
+B=set(B)
+
+num=int(input("enter 1 for union\n"
+              "enter 2 for intersection\n"
+              "enter 3 for difference of A-B\n"
+              "enter 4 for difference of B-A:"))
+
+if num==1:
+    print("\nUnion is ",A.union(B))
+elif num==2:
+    print("\nintersection is ",A.intersection(B))
+elif num==3:
+    print("\ndifference of A-B is ",A.difference(B))
+elif num==4:
+    print("\ndifference is B-A is ",B.difference(A)) 
